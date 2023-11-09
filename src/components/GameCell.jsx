@@ -10,10 +10,14 @@ export default function GameCell( { index } ) {
 
     const clickHandler = (e) => {
         const cellToAlter = e.target.classList[0]
-        const updatedBoardState = [...boardState]
-        updatedBoardState[cellToAlter] = player
-        setBoardState(updatedBoardState)
-        setPlayer(player === 1 ? 2 : 1)
+        if(boardState[cellToAlter] !== null) {
+            console.log("try again")
+        } else {
+            const updatedBoardState = [...boardState]
+            updatedBoardState[cellToAlter] = player
+            setBoardState(updatedBoardState)
+            setPlayer(player === 1 ? 2 : 1)
+        }
     }
 
     useEffect(() => {
