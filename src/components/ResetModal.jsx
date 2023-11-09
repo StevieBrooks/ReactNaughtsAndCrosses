@@ -1,6 +1,7 @@
 import { FaX } from "react-icons/fa6"
 import { useContext } from "react"
 import { GameState } from "../ContextFile"
+import Button from "./Button"
 
 export default function ResetModal() {
 
@@ -29,11 +30,11 @@ export default function ResetModal() {
                 <div className="reset-modal-content">
                     <header>
                         <h1>Reset this game or all?</h1>
-                        <button><FaX /></button>
+                        <Button btnTitle={<FaX />} btnFunction={() => setResetActive(false)} /> 
                     </header>
                     <main>
-                        <button onClick={resetThis}>This game</button>
-                        <button onClick={resetAll}>All Games</button>
+                        <Button btnTitle="This game" btnFunction={() => resetThis()} />
+                        <Button btnTitle="All games" btnFunction={() => resetAll()} />
                     </main>
                 </div>
             </div>
