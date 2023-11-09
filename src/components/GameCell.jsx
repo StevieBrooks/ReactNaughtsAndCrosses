@@ -73,7 +73,7 @@ export default function GameCell( { index } ) {
     
 
     return (
-        <div className={`${index} game-cell w-28 h-28 m-2 bg-slate-400`} onClick={clickHandler}>
+        <div className={`${index} game-cell w-20 sm:w-28 h-20 sm:h-28 m-2 bg-slate-400`} onClick={clickHandler}>
             {
                boardState[index] === 1 ? <FaO style={{display: "block"}} /> : boardState[index] === 2 ? <FaX style={{display: "block"}} /> : null
 

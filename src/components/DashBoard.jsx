@@ -14,7 +14,7 @@ export default function DashBoard() {
 
     return (
 
-        <div className="dashboard w-96 m-auto bg-slate-300 flex justify-center py-3">
+        <div className="dashboard w-72 sm:w-96 m-auto bg-slate-300 flex justify-center py-3">
             <Button btnTitle="Reset" btnFunction={resetFunc} />
         </div>
     

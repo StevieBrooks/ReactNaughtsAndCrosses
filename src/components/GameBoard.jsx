@@ -11,10 +11,10 @@ export default function GameBoard() {
 
     return (
 
-        <div className="game-container">
+        <div className="game-container relative top-5 m-auto">
             <ScoreBoard />
 
-            <div className="game-board w-96 h-96 bg-slate-600 m-auto flex flex-wrap justify-center items-center">
+            <div className="game-board w-72 sm:w-96 h-72 sm:h-96 bg-slate-600 m-auto flex flex-wrap justify-center items-center">
                 {boardState.map((cell, index) => (
                     <GameCell key={index} index={index} />
                 ))}
