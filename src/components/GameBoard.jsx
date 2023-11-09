@@ -3,10 +3,11 @@ import { GameState } from "../ContextFile"
 import GameCell from "./GameCell"
 import ScoreBoard from "./ScoreBoard"
 import DashBoard from "./DashBoard"
+import ResetModal from "./ResetModal"
 
 export default function GameBoard() {
 
-    const [player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage] = useContext(GameState)
+    const [player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, resetActive, setResetActive] = useContext(GameState)
 
     return (
 
@@ -20,6 +21,7 @@ export default function GameBoard() {
             </div>
 
             <DashBoard />
+            {resetActive && <ResetModal />}
 
         </div>
 

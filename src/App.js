@@ -12,9 +12,10 @@ export default function App() {
     const [result, setResult] = useState([0, 0])
     const [gameActive, setGameActive] = useState(false)
     const [gameMessage, setGameMessage] = useState("Naughts & Crosses")
+    const [resetActive, setResetActive] = useState(false)
 
     return (<>
-        <GameState.Provider value={[player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage]}>
+        <GameState.Provider value={[player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, resetActive, setResetActive]}>
             <GameBoard />
         </GameState.Provider>
     </>)
@@ -25,6 +26,7 @@ export default function App() {
  - form so players can punch in their own names for scoreboard
  - reset one game or entire match
  - extra points for actiing quickly
+ - commy picks random player to go first
 */
 
 /*
