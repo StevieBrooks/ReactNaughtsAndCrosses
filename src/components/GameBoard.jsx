@@ -6,7 +6,7 @@ import DashBoard from "./DashBoard"
 
 export default function GameBoard() {
 
-    const [player, setPlayer, boardState, setBoardState, result, setResult] = useContext(GameState)
+    const [player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage] = useContext(GameState)
 
     return (
 

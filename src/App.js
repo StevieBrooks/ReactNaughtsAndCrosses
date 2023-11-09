@@ -11,9 +11,10 @@ export default function App() {
     ])
     const [result, setResult] = useState([0, 0])
     const [gameActive, setGameActive] = useState(false)
+    const [gameMessage, setGameMessage] = useState("Naughts & Crosses")
 
     return (<>
-        <GameState.Provider value={[player, setPlayer, boardState, setBoardState, result, setResult]}>
+        <GameState.Provider value={[player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage]}>
             <GameBoard />
         </GameState.Provider>
     </>)
