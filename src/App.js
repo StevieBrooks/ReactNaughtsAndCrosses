@@ -9,7 +9,8 @@ export default function App() {
     const [boardState, setBoardState] = useState([
         null, null, null, null, null, null, null, null, null
     ])
-    const [result, setResult] = useState("")
+    const [result, setResult] = useState([0, 0])
+    const [gameActive, setGameActive] = useState(false)
 
     return (<>
         <GameState.Provider value={[player, setPlayer, boardState, setBoardState, result, setResult]}>
