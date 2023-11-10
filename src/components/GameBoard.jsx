@@ -7,13 +7,16 @@ import ResetModal from "./ResetModal"
 
 export default function GameBoard() {
 
-    const [player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, resetActive, setResetActive] = useContext(GameState)
+    const [player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, resetActive, setResetActive, p1Moves, setP1Moves, p2Moves, setP2Moves] = useContext(GameState)
 
     const winningCombos = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
 
     useEffect(() => {
-        console.log(boardState)
+        console.log(p1Moves)
+        console.log(p2Moves)
         for (let combo of winningCombos) {
+            // const isWinner = combo.every(cellIndex => p1Moves.includes(cellIndex));
+            // console.log(isWinner)
 
             const check1 = combo[0]
             const check2 = combo[1]
@@ -47,7 +50,7 @@ export default function GameBoard() {
                     setGameMessage("")
                 }, 3000)
 
-            } else if(boardState.every(item => item !== null)) {
+            } else if(boardState.every(item => item !== null && (boardState[check1] !== 1 && boardState[check2] !== 1 && boardState[check3] !== 1))) {
                 setGameActive(false)
                 setGameMessage("It's a draw")
                 setTimeout(function() {
