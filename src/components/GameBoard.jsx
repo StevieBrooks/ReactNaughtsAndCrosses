@@ -14,6 +14,7 @@ export default function GameBoard() {
     useEffect(() => {
         console.log(p1Moves)
         console.log(p2Moves)
+        let isWinner = false
         for (let combo of winningCombos) {
             // const isWinner = combo.every(cellIndex => p1Moves.includes(cellIndex));
             // console.log(isWinner)
@@ -23,45 +24,47 @@ export default function GameBoard() {
             const check3 = combo[2]
 
             if(boardState[check1] === 1 && boardState[check2] === 1 && boardState[check3] === 1) {
+                isWinner = true
                 setGameActive(false)
                 setGameMessage("Player 1 wins")
                 const updatedResult = [...result]
                 updatedResult[0]++
                 setResult(updatedResult)
-                setTimeout(function() {
-                    setBoardState([
-                        null, null, null, null, null, null, null, null, null
-                    ])
-                    setPlayer(1)
-                    setGameMessage("")
-                }, 3000)
+                setBoardState([
+                    null, null, null, null, null, null, null, null, null
+                ])
+                setPlayer(1)
+                break;
+                // setTimeout(function() {
+                //     setGameMessage("")
+                // }, 3000)
 
             } else if(boardState[check1] === 2 && boardState[check2] === 2 && boardState[check3] === 2) {
+                isWinner = true
                 setGameActive(false)
                 setGameMessage("Player 2 wins")
                 const updatedResult = [...result]
                 updatedResult[1]++
                 setResult(updatedResult)
-                setTimeout(function() {
-                    setBoardState([
-                        null, null, null, null, null, null, null, null, null
-                    ])
-                    setPlayer(1)
-                    setGameMessage("")
-                }, 3000)
+                setBoardState([
+                    null, null, null, null, null, null, null, null, null
+                ])
+                setPlayer(1)
+                break;
+                // setTimeout(function() {
+                //     setGameMessage("")
+                // }, 3000)
 
-            } else if(boardState.every(item => item !== null && (boardState[check1] !== 1 && boardState[check2] !== 1 && boardState[check3] !== 1))) {
-                setGameActive(false)
-                setGameMessage("It's a draw")
-                setTimeout(function() {
-                    setBoardState([
-                        null, null, null, null, null, null, null, null, null
-                    ])
-                    setPlayer(1)
-                    setGameMessage("")
-                }, 3000)
-            }
+            } 
         }
+
+        if (!isWinner && boardState.every(item => item !== null)) {
+            setGameActive(false);
+            setGameMessage("It's a draw");
+            setBoardState(Array(9).fill(null));
+            setPlayer(1);
+        }
+
     }, [boardState])
 
     return (

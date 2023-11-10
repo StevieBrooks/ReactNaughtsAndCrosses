@@ -16,6 +16,10 @@ export default function App() {
     const [p1Moves, setP1Moves] = useState([])
     const [p2Moves, setP2Moves] = useState([])
 
+    gameMessage.length > 0 && setTimeout(function() {
+        setGameMessage("")
+    }, 4000)
+
     return (<>
         <GameState.Provider value={[player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, resetActive, setResetActive, p1Moves, setP1Moves, p2Moves, setP2Moves]}>
             <GameBoard />
