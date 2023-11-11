@@ -3,21 +3,21 @@ import { GameState } from "../ContextFile"
 import GameCell from "./GameCell"
 import ScoreBoard from "./ScoreBoard"
 import DashBoard from "./DashBoard"
+import MenuModal from "./MenuModal"
 import ResetModal from "./ResetModal"
+import AssignModal from "./AssignModal"
+import ThemeModal from "./ThemeModal"
 
 export default function GameBoard() {
 
-    const [player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, resetActive, setResetActive, p1Moves, setP1Moves, p2Moves, setP2Moves] = useContext(GameState)
+    const [player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, menuActive, setMenuActive, assignActive, setAssignActive, resetActive, setResetActive, themeActive, setThemeActive] = useContext(GameState)
 
     const winningCombos = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
 
     useEffect(() => {
-        console.log(p1Moves)
-        console.log(p2Moves)
+
         let isWinner = false
         for (let combo of winningCombos) {
-            // const isWinner = combo.every(cellIndex => p1Moves.includes(cellIndex));
-            // console.log(isWinner)
 
             const check1 = combo[0]
             const check2 = combo[1]
@@ -30,15 +30,9 @@ export default function GameBoard() {
                 const updatedResult = [...result]
                 updatedResult[0]++
                 setResult(updatedResult)
-                setBoardState([
-                    null, null, null, null, null, null, null, null, null
-                ])
                 setPlayer(1)
+                setBoardState(Array(9).fill(null))
                 break;
-                // setTimeout(function() {
-                //     setGameMessage("")
-                // }, 3000)
-
             } else if(boardState[check1] === 2 && boardState[check2] === 2 && boardState[check3] === 2) {
                 isWinner = true
                 setGameActive(false)
@@ -46,15 +40,9 @@ export default function GameBoard() {
                 const updatedResult = [...result]
                 updatedResult[1]++
                 setResult(updatedResult)
-                setBoardState([
-                    null, null, null, null, null, null, null, null, null
-                ])
+                setBoardState(Array(9).fill(null))
                 setPlayer(1)
                 break;
-                // setTimeout(function() {
-                //     setGameMessage("")
-                // }, 3000)
-
             } 
         }
 
@@ -79,7 +67,10 @@ export default function GameBoard() {
             </div>
 
             <DashBoard />
+            {menuActive && <MenuModal />}
+            {assignActive && <AssignModal />}
             {resetActive && <ResetModal />}
+            {themeActive && <ThemeModal />}
 
         </div>
 

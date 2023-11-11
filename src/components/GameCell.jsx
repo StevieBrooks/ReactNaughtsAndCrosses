@@ -4,7 +4,7 @@ import { FaO, FaX } from "react-icons/fa6"
 
 export default function GameCell( { index } ) {
 
-    const [player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, resetActive, setResetActive, p1Moves, setP1Moves, p2Moves, setP2Moves] = useContext(GameState)
+    const [player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, menuActive, setMenuActive, assignActive, setAssignActive, resetActive, setResetActive, themeActive, setThemeActive] = useContext(GameState)
 
     const clickHandler = (e) => {
         const cellToAlter = e.target.classList[0]
@@ -17,8 +17,6 @@ export default function GameCell( { index } ) {
             setBoardState(updatedBoardState)
             setPlayer(player === 1 ? 2 : 1)
             setGameActive(true)
-            console.log(typeof p1Moves)
-            // player === 1 ? setP1Moves([...p1Moves, cellToAlter]) : setP2Moves([...p2Moves, cellToAlter])
         }
     }
     

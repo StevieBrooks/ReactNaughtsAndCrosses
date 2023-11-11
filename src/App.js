@@ -12,16 +12,17 @@ export default function App() {
     const [result, setResult] = useState([0, 0])
     const [gameActive, setGameActive] = useState(false)
     const [gameMessage, setGameMessage] = useState("Naughts & Crosses")
+    const [menuActive, setMenuActive] = useState(false)
+    const [assignActive, setAssignActive] = useState(false)
+    const [themeActive, setThemeActive] = useState(false)
     const [resetActive, setResetActive] = useState(false)
-    const [p1Moves, setP1Moves] = useState([])
-    const [p2Moves, setP2Moves] = useState([])
 
     gameMessage.length > 0 && setTimeout(function() {
         setGameMessage("")
-    }, 4000)
+    }, 3000)
 
     return (<>
-        <GameState.Provider value={[player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, resetActive, setResetActive, p1Moves, setP1Moves, p2Moves, setP2Moves]}>
+        <GameState.Provider value={[player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, menuActive, setMenuActive, assignActive, setAssignActive, resetActive, setResetActive, themeActive, setThemeActive]}>
             <GameBoard />
         </GameState.Provider>
     </>)

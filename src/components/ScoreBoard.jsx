@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { GameState } from "../ContextFile"
 export default function ScoreBoard() {
 
-    const [player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage] = useContext(GameState)
+    const [player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, menuActive, setMenuActive, assignActive, setAssignActive, resetActive, setResetActive, themeActive, setThemeActive] = useContext(GameState)
 
     return (<>
         {gameActive || gameMessage == "" ? 
@@ -18,4 +18,3 @@ export default function ScoreBoard() {
     )
 }
 
-// should build form so players can name themselves
