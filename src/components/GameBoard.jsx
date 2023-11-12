@@ -10,7 +10,7 @@ import ThemeModal from "./ThemeModal"
 
 export default function GameBoard() {
 
-    const [player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, menuActive, setMenuActive, assignActive, setAssignActive, resetActive, setResetActive, themeActive, setThemeActive] = useContext(GameState)
+    const [player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, menuActive, setMenuActive, assignActive, setAssignActive, resetActive, setResetActive, themeActive, setThemeActive, playerNames, setPlayerNames] = useContext(GameState)
 
     const winningCombos = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
 
@@ -26,7 +26,7 @@ export default function GameBoard() {
             if(boardState[check1] === 1 && boardState[check2] === 1 && boardState[check3] === 1) {
                 isWinner = true
                 setGameActive(false)
-                setGameMessage("Player 1 wins")
+                setGameMessage(`${playerNames[0]} wins!`)
                 const updatedResult = [...result]
                 updatedResult[0]++
                 setResult(updatedResult)
@@ -36,7 +36,7 @@ export default function GameBoard() {
             } else if(boardState[check1] === 2 && boardState[check2] === 2 && boardState[check3] === 2) {
                 isWinner = true
                 setGameActive(false)
-                setGameMessage("Player 2 wins")
+                setGameMessage(`${playerNames[1]} wins!`)
                 const updatedResult = [...result]
                 updatedResult[1]++
                 setResult(updatedResult)

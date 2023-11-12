@@ -1,5 +1,5 @@
-export default function Button( { btnTitle, btnFunction } ) {
+export default function Button( { btnTitle, btnFunction, btnType } ) {
     return (<>
-        <button onClick={btnFunction}>{btnTitle}</button>
+        <button type={btnType} onClick={btnFunction}>{btnTitle}</button>
     </>)
 }

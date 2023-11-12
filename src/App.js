@@ -16,13 +16,14 @@ export default function App() {
     const [assignActive, setAssignActive] = useState(false)
     const [themeActive, setThemeActive] = useState(false)
     const [resetActive, setResetActive] = useState(false)
+    const [playerNames, setPlayerNames] = useState(["P1", "P2"])
 
     gameMessage.length > 0 && setTimeout(function() {
         setGameMessage("")
     }, 3000)
 
     return (<>
-        <GameState.Provider value={[player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, menuActive, setMenuActive, assignActive, setAssignActive, resetActive, setResetActive, themeActive, setThemeActive]}>
+        <GameState.Provider value={[player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, menuActive, setMenuActive, assignActive, setAssignActive, resetActive, setResetActive, themeActive, setThemeActive, playerNames, setPlayerNames]}>
             <GameBoard />
         </GameState.Provider>
     </>)
