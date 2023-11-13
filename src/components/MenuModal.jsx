@@ -27,7 +27,7 @@ export default function MenuModal() {
             <div className="menu-modal">
                 <div className="menu-modal-content">
                     <header className="flex justify-end p-5">
-                        <Button btnTitle={<FaX />} btnFunction={() => setMenuActive(false)} /> 
+                        <Button btnTitle={<FaX size={28} />} btnFunction={() => setMenuActive(false)} /> 
                     </header>
                     <main className="flex flex-col items-center">
                         <h1 className="font-bold text-3xl sm:text-5xl mt-5 mb-3">Menu</h1>
@@ -43,3 +43,8 @@ export default function MenuModal() {
         </div>
     )
 }
+
+/**
+  will need this for sorting out bg opacity
+  https://stackoverflow.com/questions/5770341/i-do-not-want-to-inherit-the-child-opacity-from-the-parent-in-css
+ */

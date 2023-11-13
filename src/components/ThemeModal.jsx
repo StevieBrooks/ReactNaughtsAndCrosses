@@ -1,4 +1,4 @@
-import { FaX } from "react-icons/fa6"
+import { FaX, FaLeftLong } from "react-icons/fa6"
 import { useContext, useState } from "react"
 import { GameState } from "../ContextFile"
 import Button from "./Button"
@@ -9,6 +9,11 @@ export default function ThemeModal() {
 
     const [themeChoice, setThemeChoice] = useState("")
 
+    const goBack = () => {
+        setThemeActive(false)
+        setMenuActive(true)
+    }
+
     const themeSelect = (e) => {
         e.preventDefault()
         setGameTheme(themeChoice)
@@ -17,30 +22,33 @@ export default function ThemeModal() {
 
 
     return (
-        <div className="theme-modal-overlay bg-black text-white fixed top-0 w-full h-full">
+        <div className="theme-modal-overlay bg-darkblue opacity-95 text-orange fixed top-0 w-full h-full">
             <div className="theme-modal">
                 <div className="theme-modal-content">
-                    <header>
-                        <h1>Select Theme</h1>
-                        <Button btnTitle={<FaX />} btnFunction={() => setThemeActive(false)} /> 
+                    <header className="flex justify-between p-5">
+                        <Button btnTitle={<FaLeftLong size={28} />} btnFunction={goBack} />
+                        <Button btnTitle={<FaX size={28} />} btnFunction={() => setThemeActive(false)} /> 
                     </header>
-                    <main>
 
-                        <form onSubmit={themeSelect}>
+                    <main className="flex flex-col items-center">
 
-                            <label htmlFor="basic">Basic
+                        <h1 className="font-bold text-3xl sm:text-5xl my-5">Select Theme</h1>
+
+                        <form className="flex flex-col text-2xl" onSubmit={themeSelect}>
+
+                            <label htmlFor="basic" className="flex justify-between my-3">Basic
                                 <input type="radio" name="themeButton" id="basic" onChange={(e) => setThemeChoice(e.target.id)} defaultChecked />
                             </label>
                             
-                            <label htmlFor="daynight">Day / Night
+                            <label htmlFor="daynight" className="flex justify-between my-3">Day / Night
                                 <input type="radio" name="themeButton" id="daynight" onChange={(e) => setThemeChoice(e.target.id)}  />
                             </label>
 
-                            <label htmlFor="unitedcity">United / City
-                                <input type="radio" name="themeButton" id="unitedcity" onChange={(e) => setThemeChoice(e.target.id)}  />
+                            <label htmlFor="unitedcity" className="flex justify-between my-3">United / City
+                                <input className="ms-5" type="radio" name="themeButton" id="unitedcity" onChange={(e) => setThemeChoice(e.target.id)}  />
                             </label>
 
-                            <label htmlFor="catsdogs">Cats / Dogs
+                            <label htmlFor="catsdogs" className="flex justify-between my-3">Cats / Dogs
                                 <input type="radio" name="themeButton" id="catsdogs" onChange={(e) => setThemeChoice(e.target.id)}  />
                             </label>
 
