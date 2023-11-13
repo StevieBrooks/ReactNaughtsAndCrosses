@@ -6,11 +6,11 @@ export default function ScoreBoard() {
 
     return (<>
         {gameActive || gameMessage == "" ? 
-            <div className="scoreboard w-72 sm:w-96 bg-darkblue text-yellow m-auto flex flex-wrap justify-around items-center py-3">
+            <div className="scoreboard w-72 sm:w-96 bg-darkblue text-orange text-2xl font-bold m-auto flex flex-wrap justify-around items-center py-3 rounded-t-md">
             <h3 className={`${player === 1 && "bg-green-500"}`}>{playerNames[0]}: <span>{result[0]}</span></h3>
             <h3 className={`${player === 2 && "bg-green-500"}`}>{playerNames[1]}: <span>{result[1]}</span></h3>
         </div>    : 
-        <div className="scoreboard w-72 sm:w-96 bg-darkblue text-yellow m-auto flex flex-wrap justify-around items-center py-3">{gameMessage}</div>  
+        <div className="scoreboard w-72 sm:w-96 bg-darkblue text-orange text-2xl font-bold m-auto flex flex-wrap justify-around items-center py-3 rounded-t-md">{gameMessage}</div>  
     }
     </>
         

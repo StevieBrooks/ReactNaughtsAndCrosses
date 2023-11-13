@@ -48,7 +48,7 @@ export default function GameBoard() {
 
         if (!isWinner && boardState.every(item => item !== null)) {
             setGameActive(false);
-            setGameMessage("It's a draw");
+            setGameMessage("It's a draw!");
             setBoardState(Array(9).fill(null));
             setPlayer(1);
         }

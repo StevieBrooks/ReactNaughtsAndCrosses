@@ -25,7 +25,7 @@ export default function MenuModal() {
     return (
         <div className="menu-modal-overlay bg-darkblue opacity-90 text-yellow fixed top-0 w-full h-full">
             <div className="menu-modal">
-                <div className="menu-modal-content m-auto">
+                <div className="menu-modal-content">
                     <header>
                         <h1>Menu</h1>
                         <Button btnTitle={<FaX />} btnFunction={() => setMenuActive(false)} /> 
