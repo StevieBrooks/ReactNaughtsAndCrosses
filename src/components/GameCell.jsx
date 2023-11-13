@@ -26,23 +26,35 @@ export default function GameCell( { index } ) {
         }
     }
 
-    // const oneCells = () => {
-    //     switch(gameTheme) {
-    //         case "basic":
-    //             return <FaO style={{display: "block"}} />;
-    //             break;
-    //         case "daynight":
-    //             return sun;
-    //             break;
-    //     }
-    // } COME BACK TO THIS LATER, NEED TO CHANGE ICONS DEPENDING ON THEME
-    
+    const iconNeeded = () => {
+        if(boardState[index] === 1 && gameTheme === "basic") {
+            return <FaO style={{display: "block"}} size={56} color="#023047" />
+        } else if(boardState[index] === 2 && gameTheme === "basic") {
+            return <FaX style={{display: "block"}} size={56} color="#023047" />
+        }
+        if(boardState[index] === 1 && gameTheme === "daynight") {
+            return <img src={sun}></img>
+        } else if(boardState[index] === 2 && gameTheme === "daynight") {
+            return <img src={moon}></img>
+        }
+        if(boardState[index] === 1 && gameTheme === "unitedcity") {
+            return <img src={unitedShirt}></img>
+        } else if(boardState[index] === 2 && gameTheme === "unitedcity") {
+            return <img src={cityShirt}></img>
+        }
+        if(boardState[index] === 1 && gameTheme === "catsdogs") {
+            return <img src={cat}></img>
+        } else if(boardState[index] === 2 && gameTheme === "catsdogs") {
+            return <img src={dog}></img>
+        }
+
+    }
+
 
     return (
         <div className={`${index} game-cell w-20 sm:w-28 h-20 sm:h-28 m-2 bg-lightblue text-darkblue flex justify-center items-center rounded-md transition-transform hover:-translate-y-0.5 hover:cursor-pointer`} onClick={clickHandler}>
             {
-               boardState[index] === 1 ? <FaO style={{display: "block"}} size={56} color="#023047" /> : boardState[index] === 2 ? <FaX style={{display: "block"}} size={56} color="#023047" /> : null
-
+                iconNeeded()
             }
             
         </div>

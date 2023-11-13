@@ -23,6 +23,7 @@ export default function ResetModal() {
         setResult([0, 0])
         setPlayer(1)
         setPlayerNames(["P1", "P2"])
+        setGameTheme("basic")
         setResetActive(false)
     }
 
