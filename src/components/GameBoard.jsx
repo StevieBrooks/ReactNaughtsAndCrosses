@@ -10,7 +10,7 @@ import ThemeModal from "./ThemeModal"
 
 export default function GameBoard() {
 
-    const [player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, menuActive, setMenuActive, assignActive, setAssignActive, resetActive, setResetActive, themeActive, setThemeActive, playerNames, setPlayerNames] = useContext(GameState)
+    const [player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, menuActive, setMenuActive, assignActive, setAssignActive, resetActive, setResetActive, themeActive, setThemeActive, playerNames, setPlayerNames, gameTheme, setGameTheme]= useContext(GameState)
 
     const winningCombos = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
 
@@ -60,7 +60,7 @@ export default function GameBoard() {
         <div className="game-container relative top-5 m-auto">
             <ScoreBoard />
 
-            <div className="game-board w-72 sm:w-96 h-72 sm:h-96 bg-slate-600 m-auto flex flex-wrap justify-center items-center">
+            <div className="game-board w-72 sm:w-96 h-72 sm:h-96 bg-darkblue m-auto flex flex-wrap justify-center items-center">
                 {boardState.map((cell, index) => (
                     <GameCell key={index} index={index} />
                 ))}

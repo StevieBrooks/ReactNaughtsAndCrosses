@@ -5,7 +5,7 @@ import ResetModal from "./ResetModal"
 
 export default function DashBoard() {
 
-    const [player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, menuActive, setMenuActive, assignActive, setAssignActive, resetActive, setResetActive, themeActive, setThemeActive, playerNames, setPlayerNames] = useContext(GameState)
+    const [player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, menuActive, setMenuActive, assignActive, setAssignActive, resetActive, setResetActive, themeActive, setThemeActive, playerNames, setPlayerNames, gameTheme, setGameTheme]= useContext(GameState)
 
     const menuFunc = () => {
         setMenuActive(true)
@@ -13,7 +13,7 @@ export default function DashBoard() {
 
     return (
 
-        <div className="dashboard w-72 sm:w-96 m-auto bg-slate-300 flex justify-center py-3">
+        <div className="dashboard w-72 sm:w-96 m-auto bg-darkblue text-yellow flex justify-center py-3">
             {/* <Button btnTitle="Reset" btnFunction={resetFunc} /> */}
             <Button btnTitle="Menu" btnFunction={menuFunc} />
         </div>

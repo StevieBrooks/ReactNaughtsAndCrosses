@@ -5,7 +5,7 @@ import Button from "./Button"
 
 export default function MenuModal() {
 
-    const [player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, menuActive, setMenuActive, assignActive, setAssignActive, resetActive, setResetActive, themeActive, setThemeActive, playerNames, setPlayerNames] = useContext(GameState)
+    const [player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, menuActive, setMenuActive, assignActive, setAssignActive, resetActive, setResetActive, themeActive, setThemeActive, playerNames, setPlayerNames, gameTheme, setGameTheme]= useContext(GameState)
     
     const assignFunc = () => {
         setAssignActive(true)
@@ -23,9 +23,9 @@ export default function MenuModal() {
     }
 
     return (
-        <div className="menu-modal-overlay bg-black text-white fixed top-0 w-full h-full">
+        <div className="menu-modal-overlay bg-darkblue opacity-90 text-yellow fixed top-0 w-full h-full">
             <div className="menu-modal">
-                <div className="menu-modal-content">
+                <div className="menu-modal-content m-auto">
                     <header>
                         <h1>Menu</h1>
                         <Button btnTitle={<FaX />} btnFunction={() => setMenuActive(false)} /> 
