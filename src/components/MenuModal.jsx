@@ -23,18 +23,19 @@ export default function MenuModal() {
     }
 
     return (
-        <div className="menu-modal-overlay bg-darkblue opacity-90 text-yellow fixed top-0 w-full h-full">
+        <div className="menu-modal-overlay bg-darkblue opacity-95 text-orange fixed top-0 w-full h-full">
             <div className="menu-modal">
                 <div className="menu-modal-content">
-                    <header>
-                        <h1>Menu</h1>
+                    <header className="flex justify-end p-5">
                         <Button btnTitle={<FaX />} btnFunction={() => setMenuActive(false)} /> 
                     </header>
-                    <main>
-                        <ul>
-                            <li onClick={assignFunc}>Assign Players</li>
-                            <li onClick={resetFunc}>Reset</li>
-                            <li onClick={themeFunc}>Theme</li>
+                    <main className="flex flex-col items-center">
+                        <h1 className="font-bold text-3xl sm:text-5xl mt-5 mb-3">Menu</h1>
+                        <ul className="flex flex-col items-center">
+                            <li className="font-semibold text-xl sm:text-2xl my-2 sm:my-3 hover:cursor-pointer transition-colors hover:text-yellow" onClick={assignFunc}>Assign Players</li>
+                            <li className="font-semibold text-xl sm:text-2xl my-2 sm:my-3 hover:cursor-pointer transition-colors hover:text-yellow" onClick={themeFunc}>Select Theme</li>
+                            <li className="font-semibold text-xl sm:text-2xl my-2 sm:my-3 hover:cursor-pointer transition-colors hover:text-yellow" onClick={resetFunc}>Reset</li>
+                            
                         </ul>
                     </main>
                 </div>
