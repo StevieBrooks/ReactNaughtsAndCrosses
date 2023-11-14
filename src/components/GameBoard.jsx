@@ -55,12 +55,31 @@ export default function GameBoard() {
 
     }, [boardState])
 
+    const bgStyling = (theme) => {
+        console.log(theme)
+        switch(theme) {
+            case "basic":
+                return "bg-darkblue";
+                break;
+            case "daynight":
+                return "bg-dn5";
+                break;
+            case "unitedcity":
+                return "bg-uc4";
+                break;
+            case "catsdogs":
+                return "bg-cd5";
+                break;
+        }
+    }
+
+
     return (
 
         <div className="game-container relative top-5 m-auto">
             <ScoreBoard />
 
-            <div className="game-board w-72 sm:w-96 h-72 sm:h-96 bg-darkblue m-auto flex flex-wrap justify-center items-center">
+            <div className={`game-board w-72 sm:w-96 h-72 sm:h-96 m-auto flex flex-wrap justify-center items-center ${bgStyling(gameTheme)}`}>
                 {boardState.map((cell, index) => (
                     <GameCell key={index} index={index} />
                 ))}

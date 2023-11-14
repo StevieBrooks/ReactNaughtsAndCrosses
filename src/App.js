@@ -47,14 +47,17 @@ export default function App() {
         setGameMessage("")
     }, 3000)
 
-    console.log(gameTheme)
-
     return (<>
         <GameState.Provider value={[player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, menuActive, setMenuActive, assignActive, setAssignActive, resetActive, setResetActive, themeActive, setThemeActive, playerNames, setPlayerNames, gameTheme, setGameTheme]}>
             <GameBoard />
         </GameState.Provider>
     </>)
 }
+
+/**BUGS
+ - when resetting all games, theme is not set back to basic for bg - reset modal
+ - the 'basic' radio button is deffo causing bugs. if user doesn't actually select it themselves on theme select, then can't see basic icons
+ */
 
 /*IDEAS
  - add dropdown to change theme

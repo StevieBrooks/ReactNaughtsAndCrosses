@@ -16,7 +16,7 @@ export default function GameCell( { index } ) {
         const cellToAlter = e.target.classList[0]
         if(boardState[cellToAlter] !== null) {
             setGameActive(false)
-            setGameMessage("Please choose another cell")
+            setGameMessage("This box is taken!")
         } else {
             const updatedBoardState = [...boardState]
             updatedBoardState[cellToAlter] = player
@@ -38,21 +38,39 @@ export default function GameCell( { index } ) {
             return <img src={moon}></img>
         }
         if(boardState[index] === 1 && gameTheme === "unitedcity") {
-            return <img src={unitedShirt}></img>
+            return <img src={unitedShirt} height="80" width="80"></img>
         } else if(boardState[index] === 2 && gameTheme === "unitedcity") {
-            return <img src={cityShirt}></img>
+            return <img src={cityShirt} height="80" width="80"></img>
         }
         if(boardState[index] === 1 && gameTheme === "catsdogs") {
-            return <img src={cat}></img>
+            return <img src={cat} height="80" width="80"></img>
         } else if(boardState[index] === 2 && gameTheme === "catsdogs") {
-            return <img src={dog}></img>
+            return <img src={dog} height="90" width="90"></img>
         }
 
     }
 
+    const bgStyling = (theme) => {
+        console.log(theme)
+        switch(theme) {
+            case "basic":
+                return "bg-lightblue";
+                break;
+            case "daynight":
+                return "bg-dn3";
+                break;
+            case "unitedcity":
+                return "bg-uc5";
+                break;
+            case "catsdogs":
+                return "bg-cd4";
+                break;
+        }
+    }
+
 
     return (
-        <div className={`${index} game-cell w-20 sm:w-28 h-20 sm:h-28 m-2 bg-lightblue text-darkblue flex justify-center items-center rounded-md transition-transform hover:-translate-y-0.5 hover:cursor-pointer`} onClick={clickHandler}>
+        <div className={`${index} game-cell w-20 sm:w-28 h-20 sm:h-28 m-2 flex justify-center items-center rounded-md transition-transform hover:-translate-y-0.5 hover:cursor-pointer ${bgStyling(gameTheme)}`} onClick={clickHandler}>
             {
                 iconNeeded()
             }
