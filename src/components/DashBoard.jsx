@@ -12,7 +12,6 @@ export default function DashBoard() {
     }
 
     const bgStyling = (theme) => {
-        console.log(theme)
         switch(theme) {
             case "basic":
                 return "bg-darkblue";

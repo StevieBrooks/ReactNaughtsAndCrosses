@@ -5,7 +5,6 @@ export default function ScoreBoard() {
     const [player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, menuActive, setMenuActive, assignActive, setAssignActive, resetActive, setResetActive, themeActive, setThemeActive, playerNames, setPlayerNames, gameTheme, setGameTheme]= useContext(GameState)
 
     const bgStyling = (theme) => {
-        console.log(theme)
         switch(theme) {
             case "basic":
                 return "bg-darkblue";

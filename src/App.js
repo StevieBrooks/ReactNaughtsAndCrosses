@@ -18,18 +18,17 @@ export default function App() {
     const [gameTheme, setGameTheme] = useState("basic")
 
     useEffect(() => {
-        if(gameTheme === "basic") {
-            document.body.style.backgroundColor = "#fb8500"
-        } else {
             document.body.style.backgroundImage = `url(${getThemeImage(gameTheme)})`
             document.body.style.backgroundSize = "cover"
             document.body.style.backgroundRepeat = "no-repeat"
             document.body.style.backgroundPosition = "center"
-        }
     }, [gameTheme])
 
     const getThemeImage = (theme) => {
         switch(theme) {
+            case "basic":
+                return require("./images/basicBG.jpg");
+                break;
             case "daynight":
                 return require("./images/dayNightBG.jpg");
                 break;

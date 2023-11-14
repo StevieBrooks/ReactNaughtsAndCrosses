@@ -56,7 +56,6 @@ export default function GameBoard() {
     }, [boardState])
 
     const bgStyling = (theme) => {
-        console.log(theme)
         switch(theme) {
             case "basic":
                 return "bg-darkblue";

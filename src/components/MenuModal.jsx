@@ -23,7 +23,6 @@ export default function MenuModal() {
     }
 
     const bgStyling = (theme) => {
-        console.log(theme)
         switch(theme) {
             case "basic":
                 return "bg-darkblue";

@@ -51,7 +51,6 @@ export default function GameCell( { index } ) {
     }
 
     const bgStyling = (theme) => {
-        console.log(theme)
         switch(theme) {
             case "basic":
                 return "bg-lightblue";
