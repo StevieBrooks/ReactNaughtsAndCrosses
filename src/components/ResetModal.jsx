@@ -27,8 +27,60 @@ export default function ResetModal() {
         setResetActive(false)
     }
 
+    const bgStyling = (theme) => {
+        console.log(theme)
+        switch(theme) {
+            case "basic":
+                return "bg-darkblue";
+                break;
+            case "daynight":
+                return "bg-dn5";
+                break;
+            case "unitedcity":
+                return "bg-uc4";
+                break;
+            case "catsdogs":
+                return "bg-cd5";
+                break;
+        }
+    }
+
+    const textStyling = (theme) => {
+        switch(theme) {
+            case "basic":
+                return "text-orange";
+                break;
+            case "daynight":
+                return "text-dn1";
+                break;
+            case "unitedcity":
+                return "text-uc2";
+                break;
+            case "catsdogs":
+                return "text-cd1";
+                break;
+        }
+    }
+
+    const hoverTextStyling = (theme) => {
+        switch(theme) {
+            case "basic":
+                return "hover:text-yellow";
+                break;
+            case "daynight":
+                return "hover:text-dn2";
+                break;
+            case "unitedcity":
+                return "hover:text-uc3";
+                break;
+            case "catsdogs":
+                return "hover:text-cd4";
+                break;
+        }
+    }
+
     return (
-        <div className="reset-modal-overlay bg-darkblue opacity-95 text-orange fixed top-0 w-full h-full">
+        <div className={`reset-modal-overlay opacity-95 fixed top-0 w-full h-full ${bgStyling(gameTheme)} ${textStyling(gameTheme)}`}>
             <div className="reset-modal">
                 <div className="reset-modal-content">
                     <header className="flex justify-between p-5">
@@ -38,8 +90,10 @@ export default function ResetModal() {
 
                     <main className="flex flex-col items-center">
                         <h1 className="font-bold text-3xl sm:text-5xl my-5">Reset</h1>
-                        <Button btnTitle="This game" btnFunction={() => resetThis()} />
-                        <Button btnTitle="All games" btnFunction={() => resetAll()} />
+                        <ul>
+                            <li className="text-lg sm:text-2xl mb-3 hover:cursor-pointer hover:underline" onClick={() => resetThis()}>This game</li>
+                            <li className="text-lg sm:text-2xl mb-3 hover:cursor-pointer hover:underline" onClick={() => resetAll()}>All games</li>
+                        </ul>
                     </main>
                 </div>
             </div>
@@ -47,4 +101,4 @@ export default function ResetModal() {
     )
 }
 
-// need to fix button styling
+// might use form with radio buttons for this instead...for consistency
