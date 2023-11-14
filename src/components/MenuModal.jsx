@@ -22,8 +22,60 @@ export default function MenuModal() {
         setMenuActive(false)
     }
 
+    const bgStyling = (theme) => {
+        console.log(theme)
+        switch(theme) {
+            case "basic":
+                return "bg-darkblue";
+                break;
+            case "daynight":
+                return "bg-dn5";
+                break;
+            case "unitedcity":
+                return "bg-uc4";
+                break;
+            case "catsdogs":
+                return "bg-cd5";
+                break;
+        }
+    }
+
+    const textStyling = (theme) => {
+        switch(theme) {
+            case "basic":
+                return "text-orange";
+                break;
+            case "daynight":
+                return "text-dn1";
+                break;
+            case "unitedcity":
+                return "text-uc2";
+                break;
+            case "catsdogs":
+                return "text-cd1";
+                break;
+        }
+    }
+
+    const hoverTextStyling = (theme) => {
+        switch(theme) {
+            case "basic":
+                return "hover:text-yellow";
+                break;
+            case "daynight":
+                return "hover:text-dn2";
+                break;
+            case "unitedcity":
+                return "hover:text-uc3";
+                break;
+            case "catsdogs":
+                return "hover:text-cd4";
+                break;
+        }
+    }
+
     return (
-        <div className="menu-modal-overlay bg-darkblue opacity-95 text-orange fixed top-0 w-full h-full">
+        <div className={`menu-modal-overlay opacity-95 fixed top-0 w-full h-full ${bgStyling(gameTheme)} ${textStyling(gameTheme)}`}>
             <div className="menu-modal">
                 <div className="menu-modal-content">
                     <header className="flex justify-end p-5">
@@ -32,9 +84,9 @@ export default function MenuModal() {
                     <main className="flex flex-col items-center">
                         <h1 className="font-bold text-3xl sm:text-5xl mt-5 mb-3">Menu</h1>
                         <ul className="flex flex-col items-center">
-                            <li className="font-semibold text-xl sm:text-2xl my-2 sm:my-3 hover:cursor-pointer transition-colors hover:text-yellow" onClick={assignFunc}>Assign Players</li>
-                            <li className="font-semibold text-xl sm:text-2xl my-2 sm:my-3 hover:cursor-pointer transition-colors hover:text-yellow" onClick={themeFunc}>Select Theme</li>
-                            <li className="font-semibold text-xl sm:text-2xl my-2 sm:my-3 hover:cursor-pointer transition-colors hover:text-yellow" onClick={resetFunc}>Reset</li>
+                            <li className={`font-semibold text-xl sm:text-2xl my-2 sm:my-3 hover:cursor-pointer transition-colors ${hoverTextStyling(gameTheme)}`} onClick={assignFunc}>Assign Players</li>
+                            <li className={`font-semibold text-xl sm:text-2xl my-2 sm:my-3 hover:cursor-pointer transition-colors ${hoverTextStyling(gameTheme)}`} onClick={themeFunc}>Select Theme</li>
+                            <li className={`font-semibold text-xl sm:text-2xl my-2 sm:my-3 hover:cursor-pointer transition-colors ${hoverTextStyling(gameTheme)}`} onClick={resetFunc}>Reset</li>
                             
                         </ul>
                     </main>
