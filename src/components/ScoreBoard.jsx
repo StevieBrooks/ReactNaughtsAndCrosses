@@ -38,15 +38,32 @@ export default function ScoreBoard() {
                 break;
         }
     }
+    
+    const altTextStyling = (theme) => {
+        switch(theme) {
+            case "basic":
+                return "text-yellow";
+                break;
+            case "daynight":
+                return "text-dn2";
+                break;
+            case "unitedcity":
+                return "text-uc3";
+                break;
+            case "catsdogs":
+                return "text-cd4";
+                break;
+        }
+    }
 
     return (<>
         {gameActive || gameMessage == "" ? 
 
             <div className={`scoreboard w-72 sm:w-96 text-2xl font-bold m-auto flex flex-wrap justify-around items-center py-3 rounded-t-md ${bgStyling(gameTheme)} ${textStyling(gameTheme)}`}>
 
-            <h3 className={`${player === 1 && "bg-green-500"}`}>{playerNames[0]}: <span>{result[0]}</span></h3>
+            <h3 className={`${player === 1 && `${altTextStyling(gameTheme)}`}`}>{playerNames[0]}: <span>{result[0]}</span></h3>
 
-            <h3 className={`${player === 2 && "bg-green-500"}`}>{playerNames[1]}: <span>{result[1]}</span></h3>
+            <h3 className={`${player === 2 && `${altTextStyling(gameTheme)}`}`}>{playerNames[1]}: <span>{result[1]}</span></h3>
 
         </div>   
                  : 
