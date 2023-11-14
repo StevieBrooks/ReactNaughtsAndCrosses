@@ -1,5 +1,5 @@
 import "./App.css"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import GameBoard from "./components/GameBoard"
 import { GameState } from "./ContextFile"
 
@@ -16,6 +16,32 @@ export default function App() {
     const [themeActive, setThemeActive] = useState(false)
     const [playerNames, setPlayerNames] = useState(["P1", "P2"])
     const [gameTheme, setGameTheme] = useState("basic")
+
+    useEffect(() => {
+        if(gameTheme === "basic") {
+            document.body.style.backgroundColor = "#fb8500"
+        } else {
+            document.body.style.backgroundImage = `url(${getThemeImage(gameTheme)})`
+            document.body.style.backgroundSize = "cover"
+            document.body.style.backgroundRepeat = "no-repeat"
+            document.body.style.backgroundPosition = "center"
+        }
+    }, [gameTheme])
+
+    const getThemeImage = (theme) => {
+        switch(theme) {
+            case "daynight":
+                return require("./images/dayNightBG.jpg");
+                break;
+            case "unitedcity":
+                return require("./images/footyBG.jpg");
+                break;
+            case "catsdogs":
+                return require("./images/catsDogsBG.jpg");
+                break;
+            
+        }
+    }
 
     gameMessage.length > 0 && setTimeout(function() {
         setGameMessage("")

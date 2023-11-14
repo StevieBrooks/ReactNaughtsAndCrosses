@@ -36,20 +36,20 @@ export default function ThemeModal() {
 
                         <form className="flex flex-col text-2xl" onSubmit={themeSelect}>
 
-                            <label htmlFor="basic" className="flex justify-between my-3">Basic
-                                <input type="radio" name="themeButton" id="basic" onChange={(e) => setThemeChoice(e.target.id)} defaultChecked />
+                            <label htmlFor="basic" className="flex justify-between my-3 hover:cursor-pointer">Basic
+                                <input className="hover:cursor-pointer" type="radio" name="themeButton" id="basic" onChange={(e) => setThemeChoice(e.target.id)} defaultChecked />
                             </label>
                             
-                            <label htmlFor="daynight" className="flex justify-between my-3">Day / Night
-                                <input type="radio" name="themeButton" id="daynight" onChange={(e) => setThemeChoice(e.target.id)}  />
+                            <label htmlFor="daynight" className="flex justify-between my-3 hover:cursor-pointer">Day / Night
+                                <input className="hover:cursor-pointer" type="radio" name="themeButton" id="daynight" onChange={(e) => setThemeChoice(e.target.id)}  />
                             </label>
 
-                            <label htmlFor="unitedcity" className="flex justify-between my-3">United / City
-                                <input className="ms-5" type="radio" name="themeButton" id="unitedcity" onChange={(e) => setThemeChoice(e.target.id)}  />
+                            <label htmlFor="unitedcity" className="flex justify-between my-3 hover:cursor-pointer">United / City
+                                <input className="hover:cursor-pointer" className="ms-5" type="radio" name="themeButton" id="unitedcity" onChange={(e) => setThemeChoice(e.target.id)}  />
                             </label>
 
-                            <label htmlFor="catsdogs" className="flex justify-between my-3">Cats / Dogs
-                                <input type="radio" name="themeButton" id="catsdogs" onChange={(e) => setThemeChoice(e.target.id)}  />
+                            <label htmlFor="catsdogs" className="flex justify-between my-3 hover:cursor-pointer">Cats / Dogs
+                                <input className="hover:cursor-pointer" type="radio" name="themeButton" id="catsdogs" onChange={(e) => setThemeChoice(e.target.id)}  />
                             </label>
 
                             <Button btnType="submit" btnTitle="Submit" />

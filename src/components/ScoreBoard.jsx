@@ -18,4 +18,4 @@ export default function ScoreBoard() {
     )
 }
 
-// need new state for player names, then use at H3 innerHTML and for setting gameMessage
+// need TO RESIZE WHEN GAME MESSGE TELLS PLAYER TO CHOOSE AGAIN - FONT TOO BIG!!!

@@ -51,7 +51,7 @@ export default function GameBoard() {
             setGameMessage("It's a draw!");
             setBoardState(Array(9).fill(null));
             setPlayer(1);
-        }
+        } 
 
     }, [boardState])
 
