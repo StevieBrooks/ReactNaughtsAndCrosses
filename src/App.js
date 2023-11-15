@@ -9,7 +9,7 @@ export default function App() {
     const [boardState, setBoardState] = useState(Array(9).fill(null))
     const [result, setResult] = useState([0, 0])
     const [gameActive, setGameActive] = useState(false)
-    const [gameMessage, setGameMessage] = useState("Naughts & Crosses")
+    const [gameMessage, setGameMessage] = useState("Noughts & Crosses")
     const [menuActive, setMenuActive] = useState(false)
     const [assignActive, setAssignActive] = useState(false)
     const [resetActive, setResetActive] = useState(false)
