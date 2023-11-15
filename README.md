@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Oh Here We Go, Another Noughts & Crosses Game!!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+If you want to crack on and play, you can use this link [Play Now](https://react-naughts-and-crosses-sigma.vercel.app/).
 
-## Available Scripts
+## What's Inside?
 
-In the project directory, you can run:
+After building my first project in React, I quickly learned that prop drilling is a royal pain in the neck. Thankfully, I discovered useContext and this Noughts & Crosses project is how I've put that knowledge to work. 
 
-### `npm start`
+### Motivation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+It's simple. I tried building an educational Whack-a-Mole game for my second React project and quickly realised I'd bitten off more than I could chew. I took a step back by building this little beauty instead. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### What did I learn?
 
-### `npm test`
+It took me just under two weeks to complete this project so firstly, I learned that I'm faster and debugging than I originally thought. I also gained plenty of experience with the useContext hook and also learned the basics of useEffect. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+But that's not all. During this project, I was also able to experiment a lot with conditional styling and developed my understanding of TailwindCSS. 
 
-### `npm run build`
+### What's special about this project?
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The most notable features of this Noughts & Crosses game are the ability to assign players and change the theme. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Game Instructions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Play immediately by clicking this [link](https://react-naughts-and-crosses-sigma.vercel.app/)**
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The aim of the game is to get 3 of your icons in a row. A secondary objective is to stop your opponent from doing the same. Good luck! 
