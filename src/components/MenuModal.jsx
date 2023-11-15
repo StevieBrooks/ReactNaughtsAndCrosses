@@ -95,7 +95,3 @@ export default function MenuModal() {
     )
 }
 
-/**
-  will need this for sorting out bg opacity
-  https://stackoverflow.com/questions/5770341/i-do-not-want-to-inherit-the-child-opacity-from-the-parent-in-css
- */

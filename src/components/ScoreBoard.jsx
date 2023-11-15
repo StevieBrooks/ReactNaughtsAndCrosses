@@ -59,4 +59,3 @@ export default function ScoreBoard() {
     )
 }
 
-// NEED TO SORT OUT H3 CLASSNAMES TO HIGHLIGHT PLAYER TURN
