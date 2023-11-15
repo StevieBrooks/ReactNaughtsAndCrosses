@@ -7,7 +7,8 @@ export default function ThemeModal() {
 
     const [player, setPlayer, boardState, setBoardState, result, setResult, gameActive, setGameActive, gameMessage, setGameMessage, menuActive, setMenuActive, assignActive, setAssignActive, resetActive, setResetActive, themeActive, setThemeActive, playerNames, setPlayerNames, gameTheme, setGameTheme]= useContext(GameState)
 
-    const [themeChoice, setThemeChoice] = useState("")
+    const [themeChoice, setThemeChoice] = useState(["", false])
+    const [themeMessage, setThemeMessage] = useState("")
 
     const goBack = () => {
         setThemeActive(false)
@@ -16,8 +17,12 @@ export default function ThemeModal() {
 
     const themeSelect = (e) => {
         e.preventDefault()
-        setGameTheme(themeChoice)
-        setThemeActive(false)
+        if(themeChoice[1]) {
+            setGameTheme(themeChoice[0])
+            setThemeActive(false)
+        } else {
+            setThemeMessage("Please select a theme!")
+        }
     }
 
     const bgStyling = (theme) => {
@@ -88,24 +93,26 @@ export default function ThemeModal() {
                         <form className="flex flex-col text-2xl" onSubmit={themeSelect}>
 
                             <label htmlFor="basic" className={`flex justify-between my-3 hover:cursor-pointer ${hoverTextStyling(gameTheme)}`}>Basic
-                                <input className="hover:cursor-pointer" type="radio" name="themeButton" id="basic" onChange={(e) => setThemeChoice(e.target.id)} defaultChecked />
+                                <input className="hover:cursor-pointer" type="radio" name="themeButton" id="basic" onChange={(e) => setThemeChoice([e.target.id, true])} />
                             </label>
                             
                             <label htmlFor="daynight" className={`flex justify-between my-3 hover:cursor-pointer ${hoverTextStyling(gameTheme)}`}>Day / Night
-                                <input className="hover:cursor-pointer" type="radio" name="themeButton" id="daynight" onChange={(e) => setThemeChoice(e.target.id)}  />
+                                <input className="hover:cursor-pointer" type="radio" name="themeButton" id="daynight" onChange={(e) => setThemeChoice([e.target.id, true])}  />
                             </label>
 
                             <label htmlFor="unitedcity" className={`flex justify-between my-3 hover:cursor-pointer ${hoverTextStyling(gameTheme)}`}>United / City
-                                <input className="hover:cursor-pointer ms-5" type="radio" name="themeButton" id="unitedcity" onChange={(e) => setThemeChoice(e.target.id)}  />
+                                <input className="hover:cursor-pointer ms-5" type="radio" name="themeButton" id="unitedcity" onChange={(e) => setThemeChoice([e.target.id, true])} />
                             </label>
 
                             <label htmlFor="catsdogs" className={`flex justify-between my-3 hover:cursor-pointer ${hoverTextStyling(gameTheme)}`}>Cats / Dogs
-                                <input className="hover:cursor-pointer" type="radio" name="themeButton" id="catsdogs" onChange={(e) => setThemeChoice(e.target.id)}  />
+                                <input className="hover:cursor-pointer" type="radio" name="themeButton" id="catsdogs" onChange={(e) => setThemeChoice([e.target.id, true])}  />
                             </label>
 
                             <Button btnType="submit" btnTitle="Submit" />
 
                         </form>
+
+                        <span>{!themeChoice[1] && themeMessage}</span>
 
                     </main>
                 </div>

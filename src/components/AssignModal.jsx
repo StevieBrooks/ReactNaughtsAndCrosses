@@ -22,7 +22,6 @@ export default function AssignModal() {
     }
 
     const bgStyling = (theme) => {
-        console.log(theme)
         switch(theme) {
             case "basic":
                 return "bg-darkblue";
