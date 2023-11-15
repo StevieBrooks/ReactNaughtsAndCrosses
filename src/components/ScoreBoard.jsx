@@ -41,16 +41,16 @@ export default function ScoreBoard() {
     return (<>
         {gameActive || gameMessage == "" ? 
 
-            <div className={`scoreboard w-72 sm:w-96 text-2xl font-bold m-auto flex flex-wrap justify-around items-center py-3 rounded-t-md ${bgStyling(gameTheme)} ${textStyling(gameTheme)}`}>
+            <div className={`scoreboard w-72 sm:w-96 text-2xl font-bold m-auto flex flex-wrap ${(playerNames[0].length > 5 || playerNames[1].length > 5) && "flex-col items-start"} justify-around py-3 px-2 rounded-t-md ${bgStyling(gameTheme)} ${textStyling(gameTheme)}`}>
 
-            <h3 className={`${player === 1 && "underline underline-offset-4"}`}>{playerNames[0]}: <span>{result[0]}</span></h3>
+            <h3 className={`${player === 1 && "underline underline-offset-4"}  mb-2`}>{playerNames[0]}: <span>{result[0]}</span></h3>
 
-            <h3 className={`${player === 2 && "underline underline-offset-4"}`}>{playerNames[1]}: <span>{result[1]}</span></h3>
+            <h3 className={`${player === 2 && "underline underline-offset-4"}  mb-2`}>{playerNames[1]}: <span>{result[1]}</span></h3>
 
         </div>   
                  : 
 
-        <div className={`scoreboard w-72 sm:w-96 text-2xl font-bold m-auto flex flex-wrap justify-around items-center py-3 rounded-t-md ${bgStyling(gameTheme)} ${textStyling(gameTheme)}`}>{gameMessage}</div>  
+        <div className={`scoreboard w-72 sm:w-96 text-2xl font-bold m-auto flex flex-wrap justify-around items-center py-3 rounded-t-md ${bgStyling(gameTheme)} ${textStyling(gameTheme)}`}><p className="mb-2">{gameMessage}</p></div>  
 
     }
     </>
