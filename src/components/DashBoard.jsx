@@ -64,7 +64,7 @@ export default function DashBoard() {
 
     return (
 
-        <div className={`dashboard w-72 sm:w-96 m-auto transition-colors text-2xl font-bold flex justify-center py-3 rounded-b-md ${bgStyling(gameTheme)} ${textStyling(gameTheme)} ${hoverTextStyling(gameTheme)}`}>
+        <div className={`dashboard w-72 sm:w-96 m-auto transition-colors text-2xl font-bold flex justify-center py-3 rounded-b-md pb-5 ${bgStyling(gameTheme)} ${textStyling(gameTheme)} ${hoverTextStyling(gameTheme)}`}>
             <Button btnTitle="Menu" btnFunction={menuFunc} />
         </div>
     
