@@ -53,10 +53,3 @@ export default function App() {
     </>)
 }
 
-/** final tasks
- * 
- * - make readme file
- * - decrease image file sizes for faster loading
- * - upload this project and todo list to portfolio
- * 
- */
